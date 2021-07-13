@@ -1,38 +1,174 @@
-.App {
+header {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #777;
+  padding: 5px 12px;
+}
+
+header a.active {
+  border: 1px solid tomato;
+  background-color: pink;
+  color: tomato;
+  padding: 5px 12px;
+}
+
+.upRout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upImg {
+  width: 50%;
+}
+.in__form-title {
+  font-family: Arial Black;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 51px;
+  color: #000000;
+}
+.in__form-decs {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.signUpImg {
+  height: 100%;
+  width: 82%;
+
+  background: rgba(201, 172, 140, 0.93);
+}
+
+.in__form {
+  width: 50%;
+}
+.up-input {
+  background: #ffffff;
+  border: 1px solid #b4b4bb;
+  box-sizing: border-box;
+  height: 46px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  width: 330px;
+}
+
+.in__form-btn {
+  margin-top: 17px;
+  height: 46px;
+  border-radius: 23px;
+  color: #fff;
+  letter-spacing: 1px;
+  background: #152540;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #152540;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  width: 328px;
+
+  /* &:focus,
+  &:hover {
+    outline: none;
+    background: #fff;
+    color: #152540;
+  } */
+}
+
+/* ============= SIGN IN */
+.InForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInImg {
+  height: 100%;
+  width: 82%;
+  background: rgba(201, 172, 140, 0.93);
+}
+
+.signInp {
+  background: #ffffff;
+  border: 1px solid #b4b4bb;
+  border-radius: 10px;
+  width: 330px;
+  height: 46px;
+  padding: 20px;
+  margin-bottom: 17px;
+}
+
+/* ===================== ADD BOOK ================= */
+
+.sddImg {
+  width: 70%;
+  height: 100%;
+  background: white;
+}
+
+.ulug-img {
+  width: 50%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ulugbek-text {
+  font-family: Arial Black;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 34px;
+  color: #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.upload {
+  background: #152540;
+  border-radius: 99px;
+  width: 330px;
+
+  color: white;
+  height: 46px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* ====================== ADD AUTHOR ====================== */
+
+.avloniy-img {
+  width: 50%;
+  padding: 30px;
+  text-align: center;
+  background-color: #e5e5e5;
+}
+
+.add-author-img {
+  height: 100%;
+  width: 90%;
+  background-color: #e5e5e5;
+}
+
+.create-btn {
+  margin-top: 17px;
+  height: 46px;
+  border-radius: 23px;
+  color: #fff;
+  letter-spacing: 1px;
+  background: #152540;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px solid #152540;
+  transition: all 0.3s linear;
+  width: 328px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-form {
+  width: 50%;
+  text-align: center;
 }
