@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { StyledSettingsDiv } from "../../styles/StyledSettings";
-
 import Account from "./Account";
+import Settings from "./Settings";
 
 export default function MainSettings() {
   const [active, setActive] = useState("settings");
 
   const comps = {
     account: <Account />,
-    settings: <p>settings</p>,
+    settings: <Settings />,
     security: <p>hahahahahahahah</p>,
   };
 

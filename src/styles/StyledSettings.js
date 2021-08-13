@@ -192,4 +192,31 @@ const StyledImg = styled.div`
   }
 `;
 
-export { StyledSettingsDiv, StyledFormSide, StyledImg };
+const StyledSettings = styled.div`
+  .my-settings {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: hsla(0, 0%, 100%, 0.6);
+  }
+  .opt {
+    .language {
+      display: flex;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 19px;
+      color: hsla(0, 0%, 100%, 0.6);
+    }
+    .select {
+      width: 708px;
+      height: 44px;
+      left: 248.01px;
+      top: 172px;
+      color: #464e5f;
+      background: #f3f6f9;
+      border-radius: 4px;
+    }
+  }
+`;
+
+export { StyledSettingsDiv, StyledFormSide, StyledImg, StyledSettings };
