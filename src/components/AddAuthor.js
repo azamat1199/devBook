@@ -21,7 +21,7 @@ export default function SignIn(props) {
     console.log("I am effect");
     if (visible) {
       fetch("https://jsonplaceholder.typicode.com/users")
-        .then((res) => res.json())
+        .then((res) => res.json(  ))
         .then((data) => setUsers(data))
         .catch((err) => {
           console.error(err);

@@ -136,6 +136,7 @@ export default function AddBook() {
                 autoComplete="description"
               />
             </div>
+            {/* http://book.alitechbot.uz/api/books */}
             <div className="form__input-wrapper">
               <button className="in__form-btn" type="submit">
                 Create{" "}

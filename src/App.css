@@ -1,28 +1,31 @@
-header {
-  padding: 30px;
-  display: flex;
+/* header {
   align-items: center;
   justify-content: center;
-}
+} */
 
-header a {
+/* header a {
   text-decoration: none;
   font-size: 16px;
   color: #777;
   padding: 5px 12px;
-}
+} */
 
-header a.active {
+/* header a.active {
   border: 1px solid tomato;
   background-color: pink;
   color: tomato;
   padding: 5px 12px;
+} */
+
+.navbar-toggler {
+  background-color: white;
 }
 
 .upRout {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 .upImg {
   width: 50%;
@@ -44,13 +47,14 @@ header a.active {
 
 .signUpImg {
   height: 100%;
-  width: 82%;
+  width: 100%;
 
   background: rgba(201, 172, 140, 0.93);
 }
 
 .in__form {
   width: 50%;
+  text-align: center;
 }
 .up-input {
   background: #ffffff;
@@ -69,7 +73,7 @@ header a.active {
   color: #fff;
   letter-spacing: 1px;
   background: #152540;
-  display: flex;
+
   align-items: center;
   justify-content: center;
   border: 1px solid #152540;
@@ -85,16 +89,21 @@ header a.active {
   } */
 }
 
+/* .left-footer {
+  padding: 16px;
+} */
+
 /* ============= SIGN IN */
 .InForm {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .signInImg {
   height: 100%;
-  width: 82%;
+  width: 100%;
   background: rgba(201, 172, 140, 0.93);
 }
 
@@ -119,6 +128,7 @@ header a.active {
 .ulug-img {
   width: 50%;
   text-align: center;
+  background: rgba(243, 243, 243, 0.93);
 }
 
 .ulugbek-text {
@@ -140,6 +150,10 @@ header a.active {
 }
 
 /* ====================== ADD AUTHOR ====================== */
+
+.left-footer {
+  margin: 16px;
+}
 
 .avloniy-img {
   width: 50%;
@@ -171,4 +185,29 @@ header a.active {
 .add-form {
   width: 50%;
   text-align: center;
+  background-color: white;
+}
+
+.navbar-nav {
+  margin: 0 !important;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.4s;
+  position: relative;
+}
+
+.navbar-collapse {
+  justify-content: space-between;
+}
+
+body {
+  background-color: #191919;
+  overflow-y: hidden;
+}
+
+/* ====================== Home ============== */
+
+.bio {
+  padding: 50px;
 }
