@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { StyledSettingsDiv } from "../../styles/StyledSettings";
 import Account from "./Account";
 import Settings from "./Settings";
+import Security from "./Security";
 
 export default function MainSettings() {
   const [active, setActive] = useState("settings");
@@ -10,7 +11,7 @@ export default function MainSettings() {
   const comps = {
     account: <Account />,
     settings: <Settings />,
-    security: <p>hahahahahahahah</p>,
+    security: <Security />,
   };
 
   return (

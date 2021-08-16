@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import accountImg from "../img/account-img.svg";
 import camera from "../img/Camera.svg";
-import separator from "../img/Separator.svg";
+import Separator from "../img/Separator.svg";
 import { StyledFormSide, StyledImg } from "../../styles/StyledSettings";
 
 export default function Account() {
@@ -36,6 +36,12 @@ export default function Account() {
               placeholder="john.wick@reeves.com"
             />
           </div>
+        </div>
+        <div className="mt-4 mb-4">
+          <img src={Separator} alt="line" />
+        </div>
+        <div>
+          <button className="save">Save Changes</button>
         </div>
       </StyledFormSide>
     </div>

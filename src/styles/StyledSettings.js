@@ -9,6 +9,7 @@ const StyledSettingsDiv = styled.div`
     width: 300px;
   }
   .security {
+    cursor: pointer;
     align-items: baseline;
     color: #3699ff;
     border-radius: 4px 4px 0px 0px;
@@ -55,6 +56,7 @@ const StyledSettingsDiv = styled.div`
       }
   }
   .settings {
+    cursor:pointer;
     align-items: baseline;
     color: #3699ff;
     border-radius: 4px 4px 0px 0px;
@@ -102,6 +104,7 @@ const StyledSettingsDiv = styled.div`
   }
 
   .my-account {
+    cursor:pointer;
     align-items: baseline;
     border-radius: 4px;
     color: #3699ff;
@@ -175,6 +178,17 @@ const StyledFormSide = styled.div`
     color: #464e5f;
     padding: 12px;
   }
+  .save {
+    width: 142px;
+    height: 43px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    color: #ffffff;
+    background: #152540;
+    border-radius: 4px;
+  }
 `;
 
 const StyledImg = styled.div`
@@ -219,4 +233,82 @@ const StyledSettings = styled.div`
   }
 `;
 
-export { StyledSettingsDiv, StyledFormSide, StyledImg, StyledSettings };
+const StyledSecurity = styled.div`
+  .change {
+    color: hsla(0, 0%, 100%, 0.6);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .scrt-email {
+    display: flex;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    color: #464e5f;
+  }
+  .security-email {
+    width: 708px;
+    height: 44px;
+    background: #f3f6f9;
+    border-radius: 4px;
+  }
+  .current-password {
+    width: 708px;
+    height: 44px;
+    background: #f3f6f9;
+    border-radius: 4px;
+  }
+  .current-password {
+    width: 708px;
+    height: 44px;
+    background: #f3f6f9;
+    border-radius: 4px;
+  }
+  .new-password {
+    width: 340px;
+    height: 44px;
+    background: #f3f6f9;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .confirm-password {
+    width: 340px;
+    height: 44px;
+    background: #f3f6f9;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .scrt-password {
+    display: flex;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    color: #464e5f;
+  }
+  .pswrd {
+    margin-right: 26px;
+  }
+  .save {
+    width: 142px;
+    height: 43px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    color: #ffffff;
+    background: #152540;
+    border-radius: 4px;
+  }
+`;
+
+export {
+  StyledSettingsDiv,
+  StyledFormSide,
+  StyledImg,
+  StyledSettings,
+  StyledSecurity,
+};
