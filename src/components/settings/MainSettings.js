@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { StyledSettingsDiv } from "../../styles/StyledSettings";
 import Account from "./Account";
 import Settings from "./Settings";

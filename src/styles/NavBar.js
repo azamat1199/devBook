@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { main } from "./../";
 import ornament from "./../components/img/ornament.svg";
 
 const NavBarItem = styled.ul`

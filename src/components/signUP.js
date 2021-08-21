@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useRef, useContext } from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState, useCallback, useRef } from "react";
+import { Link } from "react-router-dom";
 import { signUpAction } from "../../src/Store/actions/authAction";
 import Axios from "../utilis/axios";
 import signUpImg from "./img/main.svg";
@@ -18,9 +18,10 @@ export default function SignUp(props) {
   });
 
   const [errors, setErrors] = useState({ type: "", message: "" });
+  console.log(errors);
 
   const emailRef = useRef();
-  const [visible, setVisible] = useState(null);
+  const [visible, setVisible] = useState(false);
 
   const handleInputChange = useCallback(
     (e) => {
@@ -34,6 +35,7 @@ export default function SignUp(props) {
     e.preventDefault();
     try {
       const { data } = await Axios.post("/sign-up", state);
+      console.log(data, "sign up");
       if (data.success) {
         // Store user data and redirect
         // localStorage.setItem('token', data.token);
@@ -127,23 +129,26 @@ export default function SignUp(props) {
             />
           </div>
           <div className="in__form-inputbox">
-            <input
-              type={visible ? "text" : "password"}
-              className="up-input"
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={state.password}
-              onChange={handleInputChange}
-              required
-            />
-            <button
-              onClick={() => setVisible((state) => !state)}
-              className="in__form-btn"
-            >
-              Next step
-              {visible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-            </button>
+            <div className="password-eye">
+              <input
+                type={visible ? "text" : "password"}
+                className="up-input"
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={state.password}
+                onChange={handleInputChange}
+                required
+              />
+              <button
+                type="button"
+                className="eye-btn"
+                onClick={() => setVisible((visible) => !visible)}
+              >
+                {visible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+              </button>
+            </div>
+            <button className="in__form-btn">Next step</button>
           </div>
         </div>
       </form>

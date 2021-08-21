@@ -1,15 +1,9 @@
 // import react from "react ";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-import {
-  NavBarItem,
-  StyledHeader,
-  StyledDiv,
-  StyledBioImg,
-  StyledBioText,
-} from "./../styles/NavBar";
-import badiyat from "./img/Badiiyat.svg";
-import shoir from "./img/shoir.svg";
+import { StyledDiv, StyledBioImg, StyledBioText } from "./../styles/NavBar";
+// import badiyat from "./img/Badiiyat.svg";
+// import shoir from "./img/shoir.svg";
 import bio from "./img/bio.svg";
 import circle from "./img/circle.svg";
 

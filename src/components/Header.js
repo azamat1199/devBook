@@ -6,7 +6,6 @@ import shoir from "./img/shoir.svg";
 import { Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import MainSettings from "./settings/MainSettings";
 
 const menu = (
   <Menu>

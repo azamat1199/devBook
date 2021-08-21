@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, Link } from "react-router-dom";
 // import classes from "./signIn.module.css";
 import ulugbekImg from "./img/ulug.svg";
 import "../App.css";
+import { useRef } from "react";
+import Axios from "../../src/utilis/axios";
+import { getValidInputData } from "./../utilis/index";
+import { handleErrorObject } from "./../utilis/index";
+import Swal from "sweetalert2";
 
 export default function AddBook() {
+  const [errors, setErrors] = useState({});
+  const [authors, setAuthors] = useState([]);
+  const fileRef = useRef();
+  const coverImageRef = useRef();
+
   const [state, setState] = useState({
-    email: "",
+    author: "",
+    imageLink: "",
     password: "",
+    title: "",
+    link: "",
+    price: null,
+    pages: null,
+    counrty: "",
+    language: "",
   });
-  const [visible, setVisible] = useState(null);
-  const [users, setUsers] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -18,25 +32,53 @@ export default function AddBook() {
   };
 
   useEffect(() => {
-    console.log("I am effect");
-    if (visible) {
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then((res) => res.json())
-        .then((data) => setUsers(data))
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  }, [visible, state.email]);
+    (async () => {
+      try {
+        const { data } = await Axios("/authors");
+        console.log(data);
+        setAuthors(data.payload);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
-  useEffect(() => {
-    console.log("I am effect");
-    const focusMethod = () => {
-      console.log("Focused");
-    };
-    window.addEventListener("focus", focusMethod);
-    return () => window.removeEventListener("focus", focusMethod);
-  }, [visible, state.email]);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { link, imageLink, ...restData } = state;
+      const formDataToSubmit = getValidInputData(restData);
+
+      const formData = new FormData();
+      for (let x in formDataToSubmit) {
+        formData.append(x, formDataToSubmit[x]); // { name: '12}
+      }
+
+      if (fileRef.current.files[0]) {
+        formData.append("link", fileRef.current.files[0]);
+      }
+
+      if (coverImageRef.current.files[0]) {
+        formData.append("IMAGE", coverImageRef.current.files[0]);
+      }
+
+      const { data } = await Axios.post("./books", formData);
+      console.log(data);
+      Swal.fileRef({
+        title: "Succesful",
+        text: "The Book Created",
+        icon: "wWrning",
+      });
+    } catch (error) {
+      const errorData = error.response.data;
+      const errorResponse = errorData ? errorData?.msg : errorData;
+      console.log(error.response);
+      const msg = handleErrorObject(errorResponse);
+      setErrors(msg);
+    }
+  };
+
+  console.log(errors);
 
   return (
     <div className="InForm">
@@ -58,7 +100,12 @@ export default function AddBook() {
             {visible ? "Turn off" : "Turn on"}
           </button> */}
 
-          <form action="" className="form" autoComplete="off">
+          <form
+            action=""
+            onSubmit={handleSubmit}
+            className="form"
+            autoComplete="off"
+          >
             <div className="form__input-wrapper">
               <input
                 className="signInp"
@@ -115,7 +162,7 @@ export default function AddBook() {
               />
             </div>
             <div classNamee="form__input-wrapper">
-              <input
+              <select
                 className="signInp"
                 type="author"
                 name="author"
@@ -123,7 +170,16 @@ export default function AddBook() {
                 onChange={handleInputChange}
                 placeholder="Author"
                 autoComplete="author"
-              />
+              >
+                {authors.map((item) => {
+                  const { _id, firstName, lastName } = item;
+                  return (
+                    <option value={_id} key={_id}>
+                      {`${firstName} ${lastName}`}
+                    </option>
+                  );
+                })}
+              </select>
             </div>
             <div classNamee="form__input-wrapper">
               <input

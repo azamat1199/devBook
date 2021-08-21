@@ -1,30 +1,18 @@
-import React, {
-  useEffect,
-  useState,
-  useCallback,
-  useMemo,
-  useRef,
-  useContext,
-} from "react";
-import {
-  useHistory,
-  Link,
-  useLocation,
-  useParams,
-  Prompt,
-} from "react-router-dom";
+import React, { useState, useCallback, useRef, useContext } from "react";
+import { useHistory, Link } from "react-router-dom";
 import Axios from "../../src/utilis/axios";
 import GlobalContext from "../Context/GlobalContext";
 import { useDispatch, useSelector } from "react-redux";
-import { updGlobalContextateUserAction } from "../Store/actions/userActions";
 import { updateUserAction } from "../Store/actions/userActions";
 import signInImg from "./img/signIn.svg";
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/all";
 import "../App.css";
 
 export default function SignIn(props) {
   const context = useContext(GlobalContext);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  console.log(user);
 
   const [state, setState] = useState({
     email: "my@mail.ru",
@@ -32,7 +20,7 @@ export default function SignIn(props) {
   });
 
   const [errorMsg, setErrorMsg] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
   const emailRef = useRef();
   const [visible, setVisible] = useState(false);
 
@@ -69,7 +57,7 @@ export default function SignIn(props) {
   return (
     <div className="InForm">
       <div className="upImg  inImg">
-        <img className="signInImg" src={signInImg} />
+        <img className="signInImg" src={signInImg} alt="sign in" />
       </div>
       <div className="in__form">
         {/* <h2 className={classes.active}>Hello</h2> */}
@@ -93,6 +81,7 @@ export default function SignIn(props) {
                 className="signInp"
                 type="text"
                 name="email"
+                ref={emailRef}
                 value={state.email}
                 onChange={handleInputChange}
                 placeholder="Your email"
@@ -101,6 +90,7 @@ export default function SignIn(props) {
             </div>
             <div classNamee="form__input-wrapper">
               <input
+                type={visible ? "text" : "password"}
                 className="signInp"
                 type="password"
                 name="password"
@@ -109,6 +99,13 @@ export default function SignIn(props) {
                 placeholder="Your password"
                 autoComplete="new-password"
               />
+              <button
+                type="button"
+                className="password-visible"
+                onClick={() => setVisible((state) => !state)}
+              >
+                {visible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+              </button>
             </div>
             <div className="form__input-wrapper">
               <button className="in__form-btn" type="submit">

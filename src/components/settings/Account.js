@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import accountImg from "../img/account-img.svg";
 import camera from "../img/Camera.svg";
 import Separator from "../img/Separator.svg";

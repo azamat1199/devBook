@@ -211,3 +211,16 @@ body {
 .bio {
   padding: 50px;
 }
+
+.eye-btn {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 4px;
+  right: 61px;
+  font-size: 20px;
+}
+
+.password-eye {
+  position: relative;
+}

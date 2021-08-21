@@ -8,8 +8,8 @@ import bookReducer from "./reducers/bookReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const persistConfig = {
-  key: "root",
   storage,
+  key: "root",
   whitelist: ["user"],
 };
 
@@ -24,6 +24,7 @@ const store = createStore(
   persistedReducer,
   composeWithDevTools(applyMiddleware(logger, reduxThunk))
 );
+console.log(store, "storeggg");
 const persistor = persistStore(store);
 
 export { store as default, persistor };

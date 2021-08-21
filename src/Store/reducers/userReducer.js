@@ -7,7 +7,6 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   const { user, token } = { ...action?.payload };
-
   switch (action.type) {
     case actionTypes.UPDATE_USER:
     case actionTypes.AUTH_SIGN_UP: {
@@ -23,7 +22,7 @@ const userReducer = (state = initialState, action) => {
       };
     }
     case actionTypes.CLEAR_USER: {
-      return initialState;
+      return state;
     }
     default: {
       return state;

@@ -1,21 +1,17 @@
-import React from "react0";
+import React from "react";
 
 function withAuth(CustomCompnent, HomePage) {
-  return class HOC extends React.Component {
-    render() {
-      const user = JSON.parse(localStorage.user);
-      const token = localStorage.getItem("token");
+  const user = JSON.parse(localStorage.getItem("user"));
+  const token = localStorage.getItem("token");
 
-      return (
-        <CustomCompnent
-          user={user}
-          token={token}
-          hide={HomePage}
-          signOut={() => {}}
-        />
-      );
-    }
-  };
+  return (
+    <CustomCompnent
+      user={user}
+      token={token}
+      hide={HomePage}
+      signOut={() => {}}
+    />
+  );
 }
 
 export default withAuth;
