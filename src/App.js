@@ -37,49 +37,70 @@ const defaultUser = {
 function App() {
   const dispatch = useDispatch();
   const { token, user } = useSelector((state) => state.user);
-  console.log(token, user);
+  console.log(token, "tokeeeeen");
 
   useEffect(() => {
     dispatch(fetchMyBooksActios());
   }, [token, user]);
 
   const location = useLocation();
-  const canRedirectToHome = 
+  const canRedirectToHome =
     location.pathname === "/sign-in" || location.pathname === "/sign-up";
 
-  if (token) {
-    console.log(4444444);
-    return (
-      <div className="App">
-        {/* <HeaderWithHoc /> */}
-        {canRedirectToHome ? (
-          <Redirect from={["/sign-in", "/sign-up"]} to="/" />
-        ) : null}
-        <header>
-          <Header />
+  return (
+    <div className="App">
+      <header>
+        <Header>
           <Switch>
             <Route component={MainSettings} exact path="/main-settings" />
-            <Route component={addBook} exact path="/add-book" />
-            <Route component={addAuthor} exact path="/add-author" />
-            <Route component={MainSettings} exact path="/main-settings" />
-            <Route component={Book} exact path="/book" />
-            <Route component={Home} />
           </Switch>
-          {/* </Header> */}
-        </header>
-      </div>
-    );
-  }
-  console.log(999999);
-  return (
-    <React.Fragment>
+          <MainSettings />
+        </Header>
+      </header>
       <Switch>
         <Route component={SignIn} exact path="/sign-in" />
         <Route component={SignUp} exact path="/sign-up" />
-        <Route component={SignIn} />
+        <Route component={addBook} exact path="/add-book" />
+        <Route component={addAuthor} exact path="/add-author" />
+        <Route component={MainSettings} exact path="/main-settings" />
+        <Route component={Home} />
       </Switch>
-    </React.Fragment>
+    </div>
   );
+
+  // if (token) {
+  //   console.log(4444444);
+  //   return (
+  //     <div className="App">
+  //       {/* <HeaderWithHoc /> */}
+  //       {canRedirectToHome ? (
+  //         <Redirect from={["/sign-in", "/sign-up"]} to="/" />
+  //       ) : null}
+  //       <header>
+  //         <Header>
+  //           <Switch>
+  //             <Route component={MainSettings} exact path="/main-settings" />
+  //             <Route component={addBook} exact path="/add-book" />
+  //             <Route component={addAuthor} exact path="/add-author" />
+  //             <Route component={MainSettings} exact path="/main-settings" />
+  //             <Route component={Book} exact path="/book" />
+  //             <Route component={Home} />
+  //           </Switch>
+  //         </Header>
+  //       </header>
+  //     </div>
+  //   );
+  // }
+  // console.log(999999);
+  // return (
+  //   <React.Fragment>
+  //     <Switch>
+  //       <Route component={SignIn} exact path="/sign-in" />
+  //       <Route component={SignUp} exact path="/sign-up" />
+  //       <Route component={SignUp} />
+  //     </Switch>
+  //   </React.Fragment>
+  // );
 }
 
 export default App;

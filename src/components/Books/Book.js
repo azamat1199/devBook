@@ -54,7 +54,7 @@ const Books = React.forwardRef((props, ref) => {
         </div>
         {!books.length ? (
           <div className="p-5 container bg-light my-5 text-center">
-            <h2 className="display-6">Ad your first book</h2>
+            <h2 className="display-6">Add your first book</h2>
             <Link to="/books/new" className="btn btn-primary">
               <AiOutlinePlus />
               Add

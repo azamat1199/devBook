@@ -202,7 +202,7 @@
 }
 
 body {
-  background-color: #191919;
+  background-color: #191919 !important;
   overflow-y: hidden;
 }
 
